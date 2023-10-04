@@ -1,0 +1,12 @@
+---
+applications:
+- name: my-sap-ui5-portfolio
+  memory: 128M 
+  instances: 1
+  buildpacks:
+    - staticfile_buildpack
+  path: ./build/ # Assumes you've built your React app and the static files are in the build directory
+  routes:
+    - route: myportfolio.cfapps.us10-001.hana.ondemand.com
+  env:
+    FORCE_HTTPS: true # Ensure HTTPS is used, especially important for production apps
